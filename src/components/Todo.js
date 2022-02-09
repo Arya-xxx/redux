@@ -2,7 +2,9 @@ import React from "react";
 import reactDom from "react-dom";
 import { addTodo,deleteTodo,removeTodo } from "../actions/index";
 import {useDispatch,useSelector} from "react-redux";
-import useState from "react";
+import {useState} from "react";
+import "./Todo.css";
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
  
 const Todo=()=>{
 
@@ -29,15 +31,13 @@ const dispatch= useDispatch();
     list.map((elem)=>{
 
       return (
-      <div className="eachItems" key={elem.id}>
-  <h3>{elem.data}</h3>
+      <div className="eachItem" key={elem.id}>
+          <h3>{elem.data}</h3>
+          <div className="todo-btn">
 
-  <div className="todo-btn">
-  
-
-    <i className="fa fa-plus add-btn" title="Delete Item" onClick={()=>dispatch(deleteTodo(inputData), setInputData(''))} >+</i>
-</div>
-</div>
+            <i className="far fa-trash-alt add-btn" title="Delete Item" onClick={()=>dispatch(deleteTodo(elem.id))}>de</i>
+            </div>
+            </div>
       )
 
     })
@@ -47,7 +47,7 @@ const dispatch= useDispatch();
 </div>
 
 <div className="showItems">
-<button className="" onClick={()=>dispatch(removeTodo())}></button>
+<button className="btn effect04" onClick={()=>dispatch(removeTodo())}>remove</button>
 </div>
   
 

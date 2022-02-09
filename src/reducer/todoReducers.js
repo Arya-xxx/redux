@@ -22,7 +22,7 @@ switch(action.type){
 
     case "DELETE_TODO":
 
-    const newList=state.list.filter((elem)=>elem.id===action.id)
+    const newList=state.list.filter((elem)=>elem.id!==action.id)
     return {
         ...state,
         list:newList
