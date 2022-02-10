@@ -54,7 +54,7 @@ const dispatch= useDispatch();
 </div>
 
   </div>
-  <h1>hello thapa technical</h1>
+  
   </>
   );
 }
